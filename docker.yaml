@@ -1,5 +1,5 @@
 ---
-- name: 웹서버 설치
+- name: nginx install
   hosts: all
   become: yes
   
