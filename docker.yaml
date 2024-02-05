@@ -1,6 +1,6 @@
 ---
 - name: 웹서버 설치
-  hosts: all
+  hosts: localhost
   become: yes
   
   tasks:
@@ -21,4 +21,4 @@
       service:
         name: ufw
         state: stopped
-        enabled: true
+        enabled: false
