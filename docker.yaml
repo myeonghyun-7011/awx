@@ -4,21 +4,6 @@
   become: yes
   
   tasks:
+
     - name: nginx
-      apt:
-        name: nginx
-        state: present
-    - name: index.html
-      get_url:
-        url: https://www.nginx.com
-        dest: /var/www/html
-    - name: service 
-      service:
-        name: nginx
-        state: started
-        enabled: true
-    - name: ufw
-      service:
-        name: ufw
-        state: stopped
-        enabled: false
+      shell: docker service create --name mynginx --replicas 3 --constraint node.role==worker --with-registry-auth -p 8008:80 nginx
