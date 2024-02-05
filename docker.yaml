@@ -21,4 +21,4 @@
       service:
         name: ufw
         state: stopped
-        enabled: false-
+        enabled: true
